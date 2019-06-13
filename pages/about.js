@@ -1,8 +1,9 @@
-import Header from "../components/Header";
+import Layout from "../components/Layout";
 
-export default () => (
-  <div>
-    <Header />
+const About = () => (
+  <Layout>
     <p>This is the about page</p>
-  </div>
+  </Layout>
 );
+
+export default About;
