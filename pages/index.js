@@ -2,10 +2,10 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
 
-const PostLink = ({ post }) => (
+const PostLink = ({ show }) => (
   <li>
-    <Link as={`/p/${post.id}`} href={`/post?title=${post.id}`}>
-      <a>{post.name}</a>
+    <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+      <a>{show.name}</a>
     </Link>
     <style jsx>{`
       li {
@@ -30,8 +30,8 @@ const Index = props => (
   <Layout>
     <h1>Batman TV Shows</h1>
     <ul>
-      {props.shows.map(show => (
-        <PostLink post={show} />
+      {props.shows.map((show, index) => (
+        <PostLink show={show} key={index} />
       ))}
     </ul>
     <style jsx>{`
